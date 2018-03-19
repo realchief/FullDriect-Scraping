@@ -86,6 +86,7 @@ class ATTProductsSpider (scrapy.Spider):
 
         for channel in channel_data:
             channel_list.append(channel.get('sortName'))
+
         for package in package_data:
             package_list.append(package.get('packageName'))
 
