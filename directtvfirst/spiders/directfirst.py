@@ -85,6 +85,11 @@ class ATTProductsSpider (scrapy.Spider):
                 , WARNING)
 
         for channel in channel_data:
+            if channel:
+                subchannels = channel.get('subChannels')
+                if subchannels:
+                    for subchannel in subchannels:
+                        channel_list.append(subchannel.get('channelName'))
             channel_list.append(channel.get('sortName'))
 
         for package in package_data:
